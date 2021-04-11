@@ -1,0 +1,47 @@
+.profile_container {
+  background-color: #fff;
+  border-radius: 6px;
+  width: 100%;
+  display: inline-block;
+}
+
+/* Profile Header Section */
+.profile_header {
+  line-height: 18px;
+  padding: 20px;
+}
+
+.profile_header .name {
+  text-transform: uppercase;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.profile_header .title {
+  font-size: 13px;
+  color: #777777;
+}
+
+/* Profile Image Section */
+.profile_image_container {
+    margin-top: -10px;
+    -webkit-clip-path: polygon(0 9%, 100% 0, 100% 94%, 0% 100%);
+    clip-path: polygon(0 9%, 100% 0, 100% 94%, 0% 100%);
+}
+
+.profile_image_container img {
+    width: 100%;
+}
+
+.profile_information_container {
+  top: 0;
+  left: 0;
+  margin: -44px 10px 30px;
+}
+
+.button_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}

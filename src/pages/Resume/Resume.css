@@ -1,0 +1,49 @@
+.section_title_container > .section_title {
+  position: relative;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.section_title_container > span {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 7px;
+  width: 100%;
+  opacity: 0.4;
+  background-color: var(--main-color);
+}
+
+.section_aboutme_content {
+  color: darkslategray;
+  line-height: 22px !important;
+  white-space: pre-line;
+}
+
+/* Service */
+.service_container {
+  height: 100%;
+  text-align: center;
+}
+
+.service_container .service_icon > .MuiSvgIcon-root {
+  color: darkslategray;
+  font-size: 46px;
+  font-weight: 300;
+  /* margin-left: 0; */
+}
+
+.service_container .service_title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 35px;
+  text-align: center;
+}
+
+.service_container .service_description {
+  color: #989898;
+  border-color: var(--main-color);
+  /* margin-right: 5px; */
+  text-align: center;
+}
