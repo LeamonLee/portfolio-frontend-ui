@@ -119,7 +119,7 @@ const MyProfileTimeline = (props) => {
             <TimelineContent className={classes.timelineContent}>
               <Typography variant="h6" className={classes.timelineContentTitle}>{objContent.title}</Typography>
               <Typography variant="caption" className={classes.timelineContentDuration}>{objContent.duration}</Typography>
-              <Typography variant="body2" className={classes.timelineContentDesc}>{objContent.description}</Typography>
+              <Typography variant="body2" className={classes.timelineContentDesc}>{`${objContent.description}`}</Typography>
             </TimelineContent>
           </TimelineItem>
         ))}

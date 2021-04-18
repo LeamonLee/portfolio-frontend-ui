@@ -74,7 +74,7 @@ const Resume = () => {
           <Grid item sm={12} md={6}>
             <MyResumeTimeline
               headerIcon={<SchoolIcon />}
-              headerContent="Working Experience"
+              headerContent="Education"
               lstContents={resumeData.education}
             />
           </Grid>

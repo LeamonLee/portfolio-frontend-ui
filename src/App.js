@@ -12,6 +12,7 @@ import Footer from "./components/Footer/Footer";
 import Portfolio from "./pages/Portfolio/Portfolio";
 import Resume from "./pages/Resume/Resume";
 import Profile from "./components/Profile/Profile";
+import MyPDFViewer from "./components/MyPDFViewer/MyPDFViewer";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -72,6 +73,9 @@ function App() {
                 <Switch>
                   <Route path="/portfolio">
                     <Portfolio />
+                  </Route>
+                  <Route path="/pdf/:pdfURL">
+                    <MyPDFViewer />
                   </Route>
                   <Route path="/">
                     <Resume />

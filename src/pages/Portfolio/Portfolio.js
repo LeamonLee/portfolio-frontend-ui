@@ -14,7 +14,12 @@ import {
   DialogContent,
   DialogActions,
   makeStyles,
+  AppBar,
+  Button
 } from "@material-ui/core";
+import {
+  Link
+} from "react-router-dom";
 import resumeData from "../../dummyData/resumeData";
 
 const useStyles = makeStyles((theme) => ({
@@ -73,6 +78,10 @@ const useStyles = makeStyles((theme) => ({
     "& > .MuiSvgIcon-root": {
       fontSize: "30px"
     } 
+  },
+  videoTabRoot: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.paper,
   }
 }));
 
@@ -80,7 +89,18 @@ const Portfolio = () => {
   const classes = useStyles();
   const [tabValue, setTabValue] = useState("All");
   const [projectModalOpen, setProjectModalOpen] = useState(false);
+  const [videoTab, setVideoTab] = useState(0);
   // const [projectModalData, setProjectModalData] = useState({});
+
+  function VideoTabProps(index) {
+    return {
+      id: `video-tab-${index}`,
+      'aria-controls': `video-tabpanel-${index}`,
+    };
+  }
+  const handleVideoTabChange = (event, newValue) => {
+    setVideoTab(newValue)
+  }
 
   return (
     <>
@@ -165,7 +185,47 @@ const Portfolio = () => {
           fullWidth
         >
           <DialogTitle>{projectModalOpen.title}</DialogTitle>
-          <img src={projectModalOpen.image} alt="project" className={classes.projectDialogImage} />
+          {
+            projectModalOpen.video ?
+            (
+              projectModalOpen.video instanceof Array ?
+              <div className={classes.videoTabRoot}>
+                <AppBar position="static">
+                  <Tabs value={videoTab} onChange={handleVideoTabChange} aria-label="video tabs">
+                    {
+                      projectModalOpen.video.map((item, idx) => {
+                        return (
+                          <Tab key={`${item.title}${idx}`} label={`${item.title}`} {...VideoTabProps(idx)} />
+                        )
+                      })
+                    }
+                  </Tabs>
+                </AppBar>
+                {
+                  projectModalOpen.video.map((item, idx) => {
+                    return (
+                      <div
+                        role="tabpanel"
+                        hidden={videoTab !== idx}
+                        id={`video-tabpanel-${idx}`}
+                        aria-labelledby={`video-tab-${idx}`}
+                      >
+                        <video width="100%" controls>
+                          <source src={item.videoPath} type="video/mp4" />
+                        </video>    
+                      </div>
+                    )
+                  })
+                }
+              </div>:
+              <video width="100%" controls>
+                <source src={projectModalOpen.video} type="video/mp4" />
+              </video>
+            // <iframe width="100%" height="450px" allowFullScreen title={projectModalOpen.title} src={projectModalOpen.video}>
+            // </iframe> :
+            ):
+            <img src={projectModalOpen.image} alt="project" className={classes.projectDialogImage} />
+          }
           <DialogContent>
             <Typography className={classes.projectDialogDesc}>
               {projectModalOpen.description}
@@ -173,7 +233,34 @@ const Portfolio = () => {
           </DialogContent>
           <DialogActions className={classes.projectDialogActions}>
             {projectModalOpen?.links?.map((link, idx) => (
+              projectModalOpen.links.length === 1 ?
+              (
+                link?.isPDF ?
+                <Button
+                  key={`${link.url}${idx}`}
+                  component="a"
+                  href={link.url}
+                  variant="contained"
+                  color="primary"
+                  className={classes.button}
+                  endIcon={link.icon}
+                >
+                  Open
+                </Button>:
+                <Button
+                  key={`${link.url}${idx}`}
+                  component={Link} 
+                  to={link.url}
+                  variant="contained"
+                  color="primary"
+                  className={classes.button}
+                  endIcon={link.icon}
+                >
+                  Open
+                </Button>
+              ):
               <a
+                key={`${link.url}${idx}`}
                 href={link.url}
                 target="_blank"
                 rel="noreferrer"
