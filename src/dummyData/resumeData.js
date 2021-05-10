@@ -20,26 +20,26 @@ const resumeData = {
     Phone: "0973 962 968"
   },
   socials: {
-    Facebook: {
-      link: "https://www.facebook.com",
-      displayText: "MyFacebook",
-      icon: <FacebookIcon /> 
-    },
-    Twitter: {
-      link: "https://www.twitter.com",
-      displayText: "MyTwitter",
-      icon: <TwitterIcon /> 
-    },
-    LinkedIn: {
-      link: "https://www.linkedin.com",
-      displayText: "MyLinkedIn",
-      icon: <LinkedInIcon /> 
-    },
-    Github: {
-      link: "https://www.github.com",
-      displayText: "MyGithub",
-      icon: <GitHubIcon /> 
-    }
+    // Facebook: {
+    //   link: "https://www.facebook.com",
+    //   displayText: "MyFacebook",
+    //   icon: <FacebookIcon /> 
+    // },
+    // Twitter: {
+    //   link: "https://www.twitter.com",
+    //   displayText: "MyTwitter",
+    //   icon: <TwitterIcon /> 
+    // },
+    // LinkedIn: {
+    //   link: "https://www.linkedin.com",
+    //   displayText: "MyLinkedIn",
+    //   icon: <LinkedInIcon /> 
+    // },
+    // Github: {
+    //   link: "https://www.github.com",
+    //   displayText: "MyGithub",
+    //   icon: <GitHubIcon /> 
+    // }
   },
   about: `您好，我畢業於臺灣科技大學電機工程系，目前有六年軟體工作經驗，接觸並執行過各種專案，多年的積累與不斷的學習使我成為一個跨領域橫向發展的軟體工程師。
 
@@ -89,21 +89,11 @@ const resumeData = {
     }
   ],
   services: [
-    {
-      title: "Web Dev",
-      description: "I have been working on web design for 10 years.",
-      icon: <WebIcon />
-    },
-    {
-      title: "Web Dev",
-      description: "I have been working on web design for 10 years.",
-      icon: <WebIcon />
-    },
-    {
-      title: "Web Dev",
-      description: "I have been working on web design for 10 years.",
-      icon: <WebIcon />
-    }
+    // {
+    //   title: "Web Dev",
+    //   description: "I have been working on web design for 10 years.",
+    //   icon: <WebIcon />
+    // }
   ],
   skillSets: [
     {
@@ -165,7 +155,7 @@ const resumeData = {
     },
     {
       tag: "React",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbYxtVDT-LIblOrUUWjP0c0w3i2RieyKnlIA&usqp=CAU",
+      image: "https://miro.medium.com/max/1132/1*N0-ikjPv4RUVvS-6KCgLPg.jpeg",
       title: "Movies and TV Series Searching App",
       caption: "即時查詢現今最新流行的電影及電視劇",
       description: "本系統透過串接themoviedb OpenAPI，可以即時查詢現今最新流行的電影及電視劇，並提供平均評分及演員陣容等資訊。",
@@ -205,7 +195,7 @@ const resumeData = {
     },
     {
       tag: "Automation Control",
-      image: "https://www.ric.com.au/wp-content/uploads/2018/03/automation-control-systems-service-division.jpg",
+      image: "https://www.mpi-corporation.com/wp-content/uploads/2018/11/High-Speed-Die-Sorting_2_.jpg",
       title: "LED Sorting System",
       caption: "LED分類機",
       description: `本系統為PC-based，搭配運動軸卡、IO卡、影像擷取卡等作LED等級分類系統。為了降低程式耦合度，根據功能劃分各種不同模組，其中包含狀態機、晶粒掃描&排序演算 法、影像辨識、運動控制、IO 控制及 shop flow 等，並將其獨立出 dll 檔，以利其他相似專案 也可使用，主程式也可專注在狀態機邏輯撰寫上。此外，為了增加執行效率，狀態機部分採 用多線程工作，並與 UI 線程分離，如此 UI 可專注在畫面更新的部分。
@@ -213,6 +203,17 @@ const resumeData = {
       links: [
         // {url: "/pdf/led-sorter-project.pdf", icon: <PictureAsPdfIcon />}
         {url: "assets/pdfs/led-sorter-project.pdf", icon: <PictureAsPdfIcon />, isPDF: true}
+      ]
+    },
+    {
+      tag: "k8s",
+      image: "https://advcloudfiles.advantech.com/cms/96040af0-6c85-4b39-8546-75c3dcf4a364/Content/content-image-1562839585341.png",
+      title: "Digital Signage System",
+      caption: "產線戰情室電子看板",
+      description: `本系統基於k8s容器管理技術在私有雲上做部屬，並針對產線需求開發工單管理、品質監控、換線工時、Lead Time等電子看板功能。`,
+      links: [
+        // {url: "/pdf/led-sorter-project.pdf", icon: <PictureAsPdfIcon />}
+        {url: "assets/pdfs/privatecloud-k8s-project.pdf", icon: <PictureAsPdfIcon />, isPDF: true}
       ]
     }
   ]

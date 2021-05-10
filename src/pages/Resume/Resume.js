@@ -11,6 +11,7 @@ import "./Resume.css";
 
 const useStyles = makeStyles(theme => ({
   skillContainer: {
+    height: "100%",
     padding: "20px",
   },
   skillTitle: {
@@ -82,34 +83,38 @@ const Resume = () => {
       </Grid>
 
       {/* Services */}
-      <Grid container className="section">
-        <Grid item className="section_title_container">
-          <h6 className="section_title">Services</h6>
-          <span></span>
-        </Grid>
-        <Grid item container justify="space-around" xs={12}>
-          {resumeData.services.map((service, idx) => (
-            <Grid
-              key={`${service.title}${idx}`}
-              item
-              xs={12}
-              sm={6}
-              md={4}
-              xl={3}
-            >
-              <div className="service_container">
-                <div className="service_icon">{service.icon}</div>
-                <Typography className="service_title" variant="h6">
-                  {service.title}
-                </Typography>
-                <Typography className="service_description" variant="body2">
-                  {service.description}
-                </Typography>
-              </div>
-            </Grid>
-          ))}
-        </Grid>
-      </Grid>
+      {
+        resumeData.services.length > 0 ?
+        (<Grid container className="section">
+          <Grid item className="section_title_container">
+            <h6 className="section_title">Services</h6>
+            <span></span>
+          </Grid>
+          <Grid item container justify="space-around" xs={12}>
+            {resumeData.services.map((service, idx) => (
+              <Grid
+                key={`${service.title}${idx}`}
+                item
+                xs={12}
+                sm={6}
+                md={4}
+                xl={3}
+              >
+                <div className="service_container">
+                  <div className="service_icon">{service.icon}</div>
+                  <Typography className="service_title" variant="h6">
+                    {service.title}
+                  </Typography>
+                  <Typography className="service_description" variant="body2">
+                    {service.description}
+                  </Typography>
+                </div>
+              </Grid>
+            ))}
+          </Grid>
+        </Grid>) :
+        null
+      }
 
       {/* Skills */}
       <Grid container className="section">
