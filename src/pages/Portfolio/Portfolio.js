@@ -249,8 +249,10 @@ const Portfolio = () => {
                 </Button>:
                 <Button
                   key={`${link.url}${idx}`}
-                  component={Link} 
-                  to={link.url}
+                  // component={Link} 
+                  // to={link.url}
+                  component="a"
+                  href={link.url}
                   variant="contained"
                   color="primary"
                   className={classes.button}
