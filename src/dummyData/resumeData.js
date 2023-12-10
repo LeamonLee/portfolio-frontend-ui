@@ -56,8 +56,13 @@ const resumeData = {
 我已做好準備，期待為您投入全部心力!`,
   experiences: [
     {
-      title: "iFactory高級工程師  - Advantech",
+      title: "資深後端工程師 - TMYTEK",
       duration: "2020/03 - Present",
+      description: ""
+    },
+    {
+      title: "資深軟體工程師 - Advantech",
+      duration: "2020/03 - 2021/07",
       description: ""
     },
     {
@@ -74,7 +79,7 @@ const resumeData = {
   education: [
     {
       title: "中央大學 - 資管所在職碩班",
-      duration: "2021/09 - Present",
+      duration: "2021/09 - 2023/06",
       description: ""
     },
     {
@@ -100,34 +105,41 @@ const resumeData = {
       title: "Frontend",
       description: [
         "React",
-        "JavaScript",
-        "Bootstrap",
-        "Material UI"
+        "Redux-toolkit",
+        "Redux-Saga",
+        "Material-UI"
       ]
     },
     {
       title: "Backend",
       description: [
-        "Node.js",
         "Python",
+        "Node.js",
+        "C++",
         "C#",
-        "C++"
       ]
     },
     {
       title: "Databases",
       description: [
-        "MS-SQL",
-        "MySQL",
         "MongoDB",
         "Redis",
+        "PostgreSQL",
+        "MySQL",
         "Elasticsearch",
         "Kafka"
       ]
     },
     {
-      title: "Other",
-      description: ["Git", "Docker", "K8s", "PLC"]
+      title: "DevOps",
+      description: [
+        "K8s", 
+        "Docker", 
+        "AWS",
+        "Github Actions",
+        "Terraform",
+        "Prometheus"
+      ]
     }
   ],
   portfolio: [
